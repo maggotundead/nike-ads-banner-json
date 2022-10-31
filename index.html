@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="site-wrapper">
+        <div class="banner">
+            <div class="banner-item">
+                <div class="banner-item__progress"></div>
+                <div class="banner-item__logo">
+                    <svg width="100" height="36" viewBox="0 0 100 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.865 35.2955C8.94499 35.1795 6.556 34.3805 4.688 32.8965C4.3315 32.613 3.482 31.763 3.197 31.4045C2.4395 30.452 1.9245 29.525 1.581 28.4965C0.523998 25.3305 1.068 21.176 3.137 16.6165C4.9085 12.713 7.642 8.84151 12.411 3.47951C13.1135 2.69051 15.2055 0.382996 15.219 0.382996C15.224 0.382996 15.11 0.580499 14.9665 0.820999C13.7265 2.898 12.6655 5.34449 12.0875 7.46249C11.159 10.861 11.271 13.7775 12.4155 16.039C13.205 17.597 14.5585 18.9465 16.0805 19.6925C18.745 20.998 22.646 21.106 27.41 20.0085C27.738 19.9325 43.991 15.618 63.528 10.4205C83.065 5.2225 99.0525 0.973001 99.055 0.976501C99.0605 0.981001 53.665 20.406 30.0995 30.4835C26.3675 32.079 25.3695 32.482 23.615 33.098C19.13 34.673 15.1125 35.4245 11.865 35.2955Z" fill="black"/>
+                    </svg>
+                </div>
+                <div class="banner-item__title"></div>
+                <div class="banner-item__price">
+                    <span class="banner-item__price-currency"></span>
+                    <span class="banner-item__price-value"></span>
+                </div>
+                <div class="banner-item__img-wrapper">
+                    <img class="banner-item__img" src="/" alt="" title="">
+                </div>
+                <a href="/" class="banner-item__btn" rel="noindex nofollow noopener" target="_blank">ORDER NOW!</a>
+            </div>
+        </div>
+
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        .site-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 64px;
+            min-height: 100vh;
+        }
+        .banner {
+            position: relative;
+            width: 300px;
+            height: 600px;
+
+            background: linear-gradient(180deg, #FFFFFF 0%, #9EA3AB 75%, #E3E3E3 100%);
+            border: 1px solid #A5A9B0;
+        }
+
+        .banner-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 32px;
+            text-align: center;
+            position: relative;
+        }
+
+        .banner-item__progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 2px;
+            background-color: #f00;
+            width: 0;
+        }
+        .banner-item__title {
+            margin-top: 74px;
+            font-size: 32px;
+            line-height: 1.2;
+            color: #111;
+            min-height: 76px;
+            transition: .4s;
+            opacity: 0;
+        }
+        .banner-item__price {
+            margin-top: 20px;
+            padding: 4px 20px;
+            border-radius: 3px;
+            color: #fff;
+            background-color: #f00;
+            transition: .8s;
+            opacity: 0;
+        }
+        .banner-item__img-wrapper {
+            margin-top: -60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            /* transition: opacity 1.2s, transform 1.8s; */
+            transition: opacity 1.2s, transform .5s;
+            opacity: 0;
+            /* transform: scale(0); */
+            transform: scale(50%);
+            position: relative;
+        }
+        .banner-item__img {
+            width: 100%;
+            height: 100%;
+            max-width: 300px;
+            max-height: 300px;
+            object-fit: contain;
+
+        }
+        .banner-item__btn {
+            padding: 6px 24px;
+            font-size: 32px;
+            line-height: 1.2;
+            background: #111;
+            border-radius: 3px;
+            color: #fff;
+            text-decoration: none;
+            transition: 1.6s;
+            opacity: 0;
+        }
+
+        .animated .banner-item__title {
+            opacity: 1;
+        }
+        .animated .banner-item__price {
+            opacity: 1;
+        }
+        .animated .banner-item__img-wrapper {
+            opacity: 1;
+            transform: scale(100%);
+        }
+        .animated .banner-item__btn {
+            opacity: 1;
+            animation: pulse 1s linear infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+            }
+        }
+    </style>
+
+    <script>
+        const url = 'https://solovey.com.ua/test/data.json';
+
+        const objArray = [];
+        // const slideInterval = 3000;
+        const slideInterval = 10000;
+        let loopIndex = 1;
+
+
+
+        const banner = document.querySelector('.banner-item');
+        const productTitle = banner.querySelector('.banner-item__title');
+        const productPriceCurrency = banner.querySelector('.banner-item__price-currency');
+        const productPriceValue = banner.querySelector('.banner-item__price-value');
+        const productImg = banner.querySelector('.banner-item__img');
+        const productBtn = banner.querySelector('.banner-item__btn');
+
+
+
+        (async () => {
+            await fetch(url).then(res => res.json()).then(res => {
+                res.sneakers.forEach(elem =>  objArray.push([elem.model, elem.price, elem.image_url, elem.link, res.currency] ))
+            });
+
+            getProductData(0);
+        })();
+
+        const getProductData = arrElemIndex => {
+            productTitle.innerHTML = objArray[arrElemIndex][0];
+            productPriceValue.textContent = objArray[arrElemIndex][1];
+            productImg.src = objArray[arrElemIndex][2];
+            productBtn.href = objArray[arrElemIndex][3];
+            productPriceCurrency.textContent = objArray[arrElemIndex][4];
+
+            banner.classList.add('animated');
+        }
+
+        const changeProductSlide = () => {
+            getProductData(loopIndex);
+
+            loopIndex++;
+
+            if ( loopIndex == objArray.length ) {
+                loopIndex = 0;
+            }
+
+            setTimeout( () => { banner.classList.remove('animated') }, slideInterval - 1000 );
+        }
+
+        setInterval(changeProductSlide, slideInterval);
+
+    </script>
+</body>
+
+</html>
