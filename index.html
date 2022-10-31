@@ -197,6 +197,7 @@
             productPriceCurrency.textContent = objArray[arrElemIndex][4];
 
             banner.classList.add('animated');
+            setTimeout( () => { banner.classList.remove('animated') }, slideInterval - 1000 );
         }
 
         const changeProductSlide = () => {
